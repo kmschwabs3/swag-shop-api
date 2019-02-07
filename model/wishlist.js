@@ -5,7 +5,7 @@ var Schema = mongoose.Schema; //structure
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var wishlist = new Schema ({
-	title: {type: String, default: "cool Wish List"},//defaults the name of the wish list
+	title: [{type: String, default: "cool Wish List"}],//defaults the name of the wish list
 	products: [{type: ObjectId, ref:'Product'}]//refrences another collection	
 });
 
