@@ -4,6 +4,10 @@ var bodyParser = require('body-parser');//allows to parse info and store as JS o
 var mongoose = require('mongoose');//imports mongoose database
 var db = mongoose.connect('mongodb://localhost/swag-shop', {useNewUrlParser: true });//connects database in app
 
+var cors = require('cors');
+
+app.use(cors()); 
+
 var Product = require('./model/product'); //connects to the product.js blueprint
 var WishList = require('./model/wishlist'); //connects to the wishlist.js blueprint 
 
@@ -81,6 +85,7 @@ app.put('/wishlist/product/add', function(request,response){
 	});
 });
 
-app.listen(3000, function() {
-	console.log('Swag Shop API running on port 3000.'); //confirms that the server is running
+app.listen(3004, function() {
+	console.log('Swag Shop API running on port 3004.'); //confirms that the server is running
 }); 
+
